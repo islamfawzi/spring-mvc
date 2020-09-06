@@ -8,7 +8,8 @@
 		<h1>Spring MVC Home Page</h1>
 		
 		<ul>
-			<li><a href="form/show-form">Show Form</a></li>
+			<li><a href="/form/show-form">Show Form</a><i>&nbsp;(basic form)</i></li>
+			<li><a href="/student/show-form">Show Student Form</a>&nbsp;<i>(form tag)</i></li>
 		</ul>
 	</body>
 </html>
