@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FormController {
@@ -17,7 +18,7 @@ public class FormController {
 		return "showForm";
 	}
 	
-	@RequestMapping(value = "process-form", method = RequestMethod.POST)
+	@RequestMapping(value = "processformV1", method = RequestMethod.POST)
 	public String processForm(HttpServletRequest request, Model model) {
 		
 		// read form request params
@@ -25,6 +26,12 @@ public class FormController {
 		
 		model.addAttribute("nameCaps", name.toUpperCase());
 		
+		return "processForm";
+	}
+	
+	@RequestMapping(value = "processformV2", method = RequestMethod.POST)
+	public String processForm(@RequestParam("name") String name, Model model) {
+		model.addAttribute("nameCaps", name.toUpperCase());
 		return "processForm";
 	}
 }
