@@ -4,13 +4,21 @@ import java.util.LinkedHashMap;
 
 public class Student {
 
-	private String firstname;
-	private String lastname;
-	private String country;
-	private String favoritelanguage;
 	
+	private String firstname;  // input
+	private String lastname;  // input
+	private String country;   // drop down menu
+	private String favoritelanguage;  // radio button
+	private String[] operationSystems; 	// checkboxes
+	
+	/** for countries drop down menu **/
 	private LinkedHashMap<String, String> countries;
+	
+	/** for favorite languages radio buttons **/
 	private LinkedHashMap<String, String> favoritelanguages;
+	
+	/** for operating systems checkboxes **/
+	private LinkedHashMap<String, String> opSys;
 
 	public Student() {
 
@@ -27,6 +35,12 @@ public class Student {
 		favoritelanguages.put("PHP", "PHP");
 		favoritelanguages.put("Ruby", "Ruby");
 		favoritelanguages.put("Angular", "Angular");
+		
+		opSys = new LinkedHashMap<String, String>();
+		opSys.put("Windows", "Windows");
+		opSys.put("Linux", "Linux");
+		opSys.put("Redhat", "Redhat");
+		opSys.put("Mac", "Mac");
 	}
 
 	public String getFirstname() {
@@ -61,6 +75,14 @@ public class Student {
 		this.favoritelanguage = favoritelanguage;
 	}
 
+	public String[] getOperationSystems() {
+		return operationSystems;
+	}
+
+	public void setOperationSystems(String[] operationSystems) {
+		this.operationSystems = operationSystems;
+	}
+
 	/** populate countries drop down menu **/
 	public LinkedHashMap<String, String> getCountries() {
 		return countries;
@@ -69,6 +91,11 @@ public class Student {
 	/** populate favorite languages radio buttons **/
 	public LinkedHashMap<String, String> getFavoritelanguages() {
 		return favoritelanguages;
+	}
+	
+	/** populate operating systems checkboxes **/
+	public LinkedHashMap<String, String> getOpSys() {
+		return opSys;
 	}
 
 	@Override

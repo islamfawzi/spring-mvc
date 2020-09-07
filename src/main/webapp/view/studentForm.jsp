@@ -36,6 +36,17 @@
 		 --%>
 		<br><br>
 		
+		
+		Operating Systems:
+		<form:checkboxes items="${student.opSys}" path="operationSystems"/>
+		
+		<%-- 
+		<form:checkbox path="operationSystems" value="Windows"/>Windows
+		<form:checkbox path="operationSystems" value="Linux"/>Linux
+		<form:checkbox path="operationSystems" value="Mac"/>Mac 
+		--%>
+		<br><br>
+		
 		<input type="submit" value="Submit" />  <!-- when submit, call setter methods -->
 		
 		
