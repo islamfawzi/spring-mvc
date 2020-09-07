@@ -10,6 +10,8 @@
 
 <p>Country: ${student.country}</p>		<!-- call getCountry() -->
 
+<p>Favorite Language: ${student.favoritelanguage} <!-- call getFavoriteLanguage() -->
+
 </body>
 
 </html>

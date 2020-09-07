@@ -14,7 +14,7 @@
 		Country: 
 		<form:select path="country">
 			
-			<form:options items="${student.countries}" />
+			<form:options items="${student.countries}" /> <!-- call getCountries() -->
 			
 			<%-- 
 			<form:option value="Saudi Arabia" label="Saudi Arabia" />
@@ -23,6 +23,17 @@
 			--%>
 			
 		</form:select>
+		<br><br>
+		
+		Favorite Language:
+		<form:radiobuttons path="favoritelanguage" items="${student.favoritelanguages}" />
+		
+		<%-- 
+		<form:radiobutton path="favoritelanguage" value="Java" />Java
+		<form:radiobutton path="favoritelanguage" value="C#" />C#
+		<form:radiobutton path="favoritelanguage" value="PHP" />PHP
+		<form:radiobutton path="favoritelanguage" value="Ruby" />Ruby
+		 --%>
 		<br><br>
 		
 		<input type="submit" value="Submit" />  <!-- when submit, call setter methods -->
