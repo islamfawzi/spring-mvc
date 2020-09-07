@@ -7,9 +7,28 @@
 
 		First name: <form:input path="firstname" />   <!-- property of Student class, call student.getFirstname() -->
 		<br><br> 
+		
 		Last name: <form:input path="lastname" />     <!-- property of Student class, call student.getLastname() -->
 		<br><br>
+		
+		Country: 
+		<form:select path="country">
+			
+			<form:options items="${student.countries}" />
+			
+			<%-- 
+			<form:option value="Saudi Arabia" label="Saudi Arabia" />
+			<form:option value="Germany" label="Germany" />
+			<form:option value="UK" label="UK" /> 
+			--%>
+			
+		</form:select>
+		<br><br>
+		
 		<input type="submit" value="Submit" />  <!-- when submit, call setter methods -->
+		
+		
+		
 
 	</form:form>
 

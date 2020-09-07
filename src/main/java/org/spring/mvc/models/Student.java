@@ -1,16 +1,22 @@
 package org.spring.mvc.models;
 
+import java.util.LinkedHashMap;
+
 public class Student {
 
 	private String firstname;
 	private String lastname;
+	private String country;
+
+	private LinkedHashMap<String, String> countries;
 
 	public Student() {
-	}
 
-	public Student(String firstname, String lastname) {
-		this.firstname = firstname;
-		this.lastname = lastname;
+		countries = new LinkedHashMap<String, String>();
+		countries.put("EG", "Egypt");
+		countries.put("SA", "Saudi");
+		countries.put("DE", "Germany");
+		countries.put("US", "USA");
 	}
 
 	public String getFirstname() {
@@ -29,8 +35,21 @@ public class Student {
 		this.lastname = lastname;
 	}
 
+	public String getCountry() {
+		return country != null ? countries.get(country) : country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public LinkedHashMap<String, String> getCountries() {
+		return countries;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Student [firstname=%s, lastname=%s]", firstname, lastname);
+		return String.format("Student [firstname=%s, lastname=%s, country=%s]", firstname, lastname, country);
 	}
+
 }
