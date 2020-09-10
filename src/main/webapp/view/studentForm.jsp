@@ -1,11 +1,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
+<head>
+	<style type="text/css">
+		.error{
+			color: red;
+		}
+	</style>
+</head>
 <body>
 
 
 	<form:form action="/student/confirm" method="POST" modelAttribute="student">  <!-- defined and added to the model in the controller -->
 
 		First name: <form:input path="firstname" />   <!-- property of Student class, call student.getFirstname() -->
+		<form:errors path="firstname" cssClass="error" />
 		<br><br> 
 		
 		Last name: <form:input path="lastname" />     <!-- property of Student class, call student.getLastname() -->

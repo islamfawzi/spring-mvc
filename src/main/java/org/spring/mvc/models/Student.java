@@ -2,9 +2,13 @@ package org.spring.mvc.models;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
 
-	
+	@NotNull(message = "is required")
+	@Size(min = 1, message = "is required")
 	private String firstname;  // input
 	private String lastname;  // input
 	private String country;   // drop down menu
@@ -48,7 +52,7 @@ public class Student {
 	}
 
 	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+		this.firstname = firstname.trim();
 	}
 
 	public String getLastname() {
