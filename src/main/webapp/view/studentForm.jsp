@@ -53,12 +53,17 @@
 		<form:checkbox path="operationSystems" value="Linux"/>Linux
 		<form:checkbox path="operationSystems" value="Mac"/>Mac 
 		--%>
+		
 		<br><br>
+		Age: <form:input path="age"/>
+		<form:errors path="age" cssClass="error" />
 		
+		<br><br>
+		Postal Code: <form:input path="postalCode"/>
+		<form:errors path="postalCode" cssClass="error" />
+		
+		<br><br>
 		<input type="submit" value="Submit" />  <!-- when submit, call setter methods -->
-		
-		
-		
 
 	</form:form>
 

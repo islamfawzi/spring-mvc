@@ -1,8 +1,10 @@
 package org.spring.mvc.controllers;
 
+import java.util.logging.Logger;
+
 import javax.validation.Valid;
 
-import org.apache.log4j.Logger;
+
 import org.spring.mvc.models.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/student")
 public class StudentController {
 
-	final private Logger logger = Logger.getLogger(this.getClass());
+	final private Logger logger = Logger.getLogger(StudentController.class.getSimpleName());
 	
 	@RequestMapping(value = "/show-form", method = RequestMethod.GET)
 	public String showStudentForm(Model model) {
@@ -32,6 +34,9 @@ public class StudentController {
 	public String confirm(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
 		
 		logger.info("confirm() -> " + student);
+		
+		/** get validation errors codes for custom error messages **/
+		logger.info("BindingResult: " + bindingResult);
 		
 		if(bindingResult.hasErrors())
 			return "studentForm";

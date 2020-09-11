@@ -9,7 +9,7 @@
 		
 		<ul>
 			<li><a href="/form/show-form">Show Form</a><i>&nbsp;(basic form)</i></li>
-			<li><a href="/student/show-form">Show Student Form</a>&nbsp;<i>(form tag)</i></li>
+			<li><a href="/student/show-form">Show Student Form</a>&nbsp;<i>(form tag, validation)</i></li>
 		</ul>
 	</body>
 </html>

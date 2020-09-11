@@ -21,6 +21,10 @@
 	</c:forEach>
 </ul>
 
+<p>Age: ${student.age}</p>
+
+<p>Postal Code: ${student.postalCode}</p>
+
 </body>
 
 </html>

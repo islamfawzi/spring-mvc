@@ -1,8 +1,12 @@
 package org.spring.mvc.models;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Student {
@@ -14,6 +18,14 @@ public class Student {
 	private String country;   // drop down menu
 	private String favoritelanguage;  // radio button
 	private String[] operationSystems; 	// checkboxes
+	
+	@NotNull(message = "is required")      // should convert the field to Integer instead of int to make this work 
+	@Min(value = 6, message = "minimum 6")
+	@Max(value = 30, message = "maximum 30")
+	private Integer age;
+	
+	@Pattern(regexp = "[a-zA-Z0-9]{5}", message = "invalid postal code")
+	private String postalCode;
 	
 	/** for countries drop down menu **/
 	private LinkedHashMap<String, String> countries;
@@ -86,6 +98,22 @@ public class Student {
 	public void setOperationSystems(String[] operationSystems) {
 		this.operationSystems = operationSystems;
 	}
+	
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
 
 	/** populate countries drop down menu **/
 	public LinkedHashMap<String, String> getCountries() {
@@ -104,7 +132,8 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return String.format("Student [firstname=%s, lastname=%s, country=%s]", firstname, lastname, country);
+		return String.format(
+				"Student [firstname=%s, lastname=%s, country=%s, favoritelanguage=%s, operationSystems=%s, age=%s, postalCode=%s]",
+				firstname, lastname, country, favoritelanguage, Arrays.toString(operationSystems), age, postalCode);
 	}
-
 }
