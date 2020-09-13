@@ -25,6 +25,8 @@
 
 <p>Postal Code: ${student.postalCode}</p>
 
+<p>Course Code: ${student.courseCode}</p>
+
 </body>
 
 </html>

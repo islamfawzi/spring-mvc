@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.spring.mvc.validation.CourseCode;
+
 public class Student {
 
 	@NotNull(message = "is required")
@@ -26,6 +28,10 @@ public class Student {
 	
 	@Pattern(regexp = "[a-zA-Z0-9]{5}", message = "invalid postal code")
 	private String postalCode;
+	
+	/** Custom Validation **/
+	@CourseCode(value = "LUV", message = "Must start with LUV")
+	private String courseCode;
 	
 	/** for countries drop down menu **/
 	private LinkedHashMap<String, String> countries;
@@ -114,6 +120,14 @@ public class Student {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
 
 	/** populate countries drop down menu **/
 	public LinkedHashMap<String, String> getCountries() {
@@ -133,7 +147,7 @@ public class Student {
 	@Override
 	public String toString() {
 		return String.format(
-				"Student [firstname=%s, lastname=%s, country=%s, favoritelanguage=%s, operationSystems=%s, age=%s, postalCode=%s]",
-				firstname, lastname, country, favoritelanguage, Arrays.toString(operationSystems), age, postalCode);
+				"Student [firstname=%s, lastname=%s, country=%s, favoritelanguage=%s, operationSystems=%s, age=%s, postalCode=%s, courseCode=%s]",
+				firstname, lastname, country, favoritelanguage, Arrays.toString(operationSystems), age, postalCode, courseCode);
 	}
 }
